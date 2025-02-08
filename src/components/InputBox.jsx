@@ -51,7 +51,9 @@ const InputBox = ({
           name="currency"
           id={currencyId}
           value={selectedCurrency}
-          onChange={onChangeCurrency}
+          onChange={
+            onChangeCurrency && ((e) => onChangeCurrency(e.target.value))
+          }
           disabled={disableCurrency}
           className="cursor-pointer bg-gray-100 p-2 rounded-md"
         >
